@@ -1,0 +1,15 @@
+<div class="jumbotron" *ngIf='actorParaMostrar'>
+    <div class="container">
+        <div>
+            <h2>Pais del repartidor</h2>
+            <img src="{{actorParaMostrar.pais.flag}}" class="foto">
+            <p>Nombre: {{actorParaMostrar.pais.name}}</p>
+            <p>Abreviacion: {{actorParaMostrar.pais.alpha3Code}}</p>
+            <p>Capital: {{actorParaMostrar.pais.capital}}</p>
+            <p>Poblacion: {{actorParaMostrar.pais.population}}</p>
+            <p>Lenguaje: {{actorParaMostrar.pais.languages[0].nativeName}}</p>
+            <p>Continente: {{actorParaMostrar.pais.region}}</p>
+
+        </div>
+    </div>
+</div>

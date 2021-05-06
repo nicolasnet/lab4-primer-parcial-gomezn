@@ -1,0 +1,14 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    <span class="text-muted">Repartidores</span>
+    <span class="badge badge-secondary badge-pill">Totales: {{cantidadActores}}</span>
+</h4>
+
+    <ul class="list-group mb-3 card-body overflow-auto" style="height: 260px;" #scrollMe  [scrollTop]="scrollMe">
+        <li type="button" class="list-group-item d-flex justify-content-between lh-condensed elegido" *ngFor="let actor of listadoActores" (click)="seleccionActor(actor)">
+            <div >
+                <h6 class="my-0">Nombre: {{actor.nombre}}</h6>
+                <small class="text-muted">DNI: {{actor.dni}}</small>
+            </div>
+            <img src="{{actor.pais.flag}}" class="bandera" >
+        </li>
+    </ul>
