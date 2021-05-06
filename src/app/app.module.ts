@@ -12,13 +12,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './pages/basicas/error/error.component';
 import { HomeComponent } from './pages/basicas/home/home.component';
 import { MenuComponent } from './pages/basicas/menu/menu.component';
+import { LoginComponent } from './pages/basicas/login/login.component';
+import { AuthService } from './servicios/auth.service';
+import { AltaRepartidorComponent } from './pages/repartidor/alta-repartidor/alta-repartidor.component';
+import { ListadoPaisesComponent } from './pages/listado-paises/listado-paises.component';
+import { FormRepartidorComponent } from './pages/repartidor/form-repartidor/form-repartidor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent,
+    AltaRepartidorComponent,
+    ListadoPaisesComponent,
+    FormRepartidorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,7 @@ import { MenuComponent } from './pages/basicas/menu/menu.component';
     AngularFireDatabaseModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

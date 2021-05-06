@@ -2,13 +2,16 @@
 
 <button (click)="crearDato()" class="btn btn-info">Enviar dato</button>
 
-<br><br><br><br>
+<br>
 <div class="container">
     <div class="row-center">
         <div class="col-md-12">
             <div class="home-template texto">
                 <h1>Bienvenido</h1>                                                    
-                <h4> En el menu de navegacion podes elegir entre los distintos componentes interactivos </h4>                                
+                <h4> En el menu de navegacion podes elegir entre los distintos componentes interactivos </h4>
+                <p>Yo soy Gomez Nicolas. Podes encontrarme <a href="https://github.com/nicolasnet" target="_blank">en GitHub <i class="fa fa-github"></i></a></p>
+                <p>{{this.gitUsuario.login}}</p>
+                <img src="{{this.gitUsuario.avatar_url}}">                           
             </div>
         </div>
     </div>

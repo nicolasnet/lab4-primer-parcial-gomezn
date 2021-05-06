@@ -1,0 +1,61 @@
+<div class="container">
+    <form class="needs-validation" novalidate [formGroup]="forma" (ngSubmit)="nuevoRepartidor()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombre">
+          <small class="invalid" *ngIf="forma.get('nombre').errors?.required && forma.get('nombre').touched">El nombre es requerido</small>
+          <small class="invalid" *ngIf="forma.get('nombre').errors?.contieneEspacios && forma.get('nombre').touched">El nombre no puede tener espacios</small>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="number" max="99999999" class="form-control" id="dni" placeholder="17xxxxxx" value="" formControlName="dni">
+            <small class="invalid" *ngIf="forma.get('dni').errors?.required && forma.get('dni').touched">El dni es requerido</small>
+            <small class="invalid" *ngIf="forma.get('dni').errors?.max && forma.get('dni').touched">El dni debe ser de 8 digitos maximo</small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-1">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edad" placeholder="0" value="" formControlName="edad">
+            <small class="invalid" *ngIf="forma.get('edad').errors?.required && forma.get('edad').touched">La edad es requerida</small>
+            <small class="invalid" *ngIf="forma.get('edad').errors?.min || forma.get('edad').errors?.max && forma.get('edad').touched">La edad debe ser entre 18 y 99</small>
+        </div>
+        <div class="col-md-6 mb-2">
+            <label for="capacidad" class="form-label">Capacidad de transporte</label>
+            <input type="number" max="99999999" class="form-control" id="capacidad" placeholder="0" value="" formControlName="capacidad">
+            <small class="invalid" *ngIf="forma.get('capacidad').errors?.required && forma.get('capacidad').touched">La capacidad es requerida</small>
+        </div>
+        
+    </div>
+    <div class="row g-3">
+        
+        <div class="col-md-6">
+            <label for="unidadPropia" class="form-label">¿Posee unidad propia?</label>
+            <br>
+            <select class="form-select" id="unidadPropia" formControlName="unidadPropia">
+                <option value="">Choose...</option>
+                <option value=true>SI</option>
+                <option value=false>NO</option>               
+            </select>
+                                     
+        </div>
+    </div>
+    <small class="invalid" *ngIf="forma.get('unidadPropia').errors?.required && forma.get('unidadPropia').touched">La unidad propia es requerida</small>
+        
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="pais">Pais</label>
+          <input type="text" *ngIf="paisParaMostrar" class="form-control" id="pais" value="{{paisParaMostrar['name']}}" disabled>
+          <input type="text" *ngIf="!paisParaMostrar" class="form-control" placeholder="Seleccionar pais del listado" disabled>
+          
+        </div>
+    
+    
+      </div>
+    
+    
+      <hr class="mb-4">
+      <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="forma.invalid">Dar el alta</button>
+    </form>
+    </div>
