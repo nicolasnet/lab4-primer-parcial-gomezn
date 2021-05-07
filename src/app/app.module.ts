@@ -21,6 +21,8 @@ import { DetalleFormComponent } from './pages/detalleRepartidor/detalle-form/det
 import { DetalleRepartidorComponent } from './pages/detalleRepartidor/detalle-repartidor/detalle-repartidor.component';
 import { ListadoRepartidoresComponent } from './pages/detalleRepartidor/listado-repartidores/listado-repartidores.component';
 import { DetallePaisComponent } from './pages/detalleRepartidor/detalle-pais/detalle-pais.component';
+import { PizzaFormComponent } from './pages/pizza/pizza-form/pizza-form.component';
+import { AltaPizzaComponent } from './pages/pizza/alta-pizza/alta-pizza.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { DetallePaisComponent } from './pages/detalleRepartidor/detalle-pais/det
     DetalleFormComponent,
     DetalleRepartidorComponent,
     ListadoRepartidoresComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    PizzaFormComponent,
+    AltaPizzaComponent
   ],
   imports: [
     BrowserModule,

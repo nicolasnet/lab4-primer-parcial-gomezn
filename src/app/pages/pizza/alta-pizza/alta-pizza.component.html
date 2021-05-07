@@ -1,0 +1,37 @@
+<div class="container">
+    <main>
+      <div class="py-3 text-center">      
+        <h1>Nueva Pizza</h1>
+        <p class="text-muted">(Todos los campos son obligatorios)</p>    
+      </div>
+  
+      <div class="row g-5">     
+          <div class="col-md-12">
+              <form class="needs-validation" [formGroup]="forma" (ngSubmit)="NuevaEncuesta()">
+                  <div class="row g-3">
+                          <div class="col-sm-6">
+                              <label for="nombre" class="form-label">Nombre</label>
+                              <input type="text" class="form-control" id="nombre" placeholder="Nombre" value="" formControlName="nombre">
+                              <small class="invalid" *ngIf="forma.get('nombre').errors?.required && forma.get('nombre').touched">El nombre es requerido</small>
+                              <small class="invalid" *ngIf="forma.get('nombre').errors?.contieneEspacios">El nombre no puede tener espacios</small>                    
+                          </div>
+  
+                          <div class="col-sm-6">
+                              <label for="Ingredientes" class="form-label">Ingredientes</label>
+                              <input type="text" class="form-control" id="Ingredientes" placeholder="Ingredientes" value="" formControlName="Ingredientes">
+                              <small class="invalid" *ngIf="forma.get('Ingredientes').errors?.required && forma.get('Ingredientes').touched">El apellido es requerido</small>
+                              <small class="invalid" *ngIf="forma.get('Ingredientes').errors?.contieneEspacios">El apellido no puede tener espacios</small>
+                          </div>
+                      </div>
+  
+                  <hr class="my-4">
+  
+                  <button class="w-100 btn btn-info btn-lg" type="submit" [disabled]="forma.invalid">Pizza Lista</button>
+              </form>
+          </div>
+      </div>
+    </main>
+  </div>
+  <br>
+  
+      
