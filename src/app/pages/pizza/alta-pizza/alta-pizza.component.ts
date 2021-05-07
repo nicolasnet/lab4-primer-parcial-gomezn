@@ -12,14 +12,16 @@ import { FirebaseBasicService } from 'src/app/servicios/firebase-basic.service';
 export class AltaPizzaComponent implements OnInit {
 
   public forma: FormGroup;
-  nuevaEncuesta: Pizza;
+  nuevaPizza: Pizza;
 
   constructor(private fb: FormBuilder, private fireService: FirebaseBasicService, private ruta: Router) { }
 
   ngOnInit(): void {
     this.forma = this.fb.group({
       'nombre': ['', [Validators.required], this.spaceValidator],
-      'Ingredientes':['', [Validators.required], this.spaceValidator],
+      'Ingredientes':['', Validators.required],
+      'peso': ['', Validators.required],
+      'precio': ['', Validators.required],
     });
   }
 
@@ -39,17 +41,14 @@ export class AltaPizzaComponent implements OnInit {
 
 
 
-  NuevaEncuesta(){
+  NuevaPizza(){
     const encuestaNueva = new Pizza;
-    // encuestaNueva.usuario = localStorage.getItem('usuario');
-    // encuestaNueva.nombre = this.toTitleCase(this.forma.get('nombre').value);
-    // encuestaNueva.apellido = this.toTitleCase(this.forma.get('apellido').value);
-    // encuestaNueva.edad = this.forma.get('edad').value;
-    // encuestaNueva.celular = this.forma.get('celular').value;
-    // encuestaNueva.puntaje = this.forma.get('puntaje').value;
-    // encuestaNueva.opinion = this.forma.get('opinion').value;
-    // encuestaNueva.favorito = this.forma.get('favorito').value;
-    // this.fireService.create(encuestaNueva);
+    
+    encuestaNueva.nombre = this.toTitleCase(this.forma.get('nombre').value);
+    encuestaNueva.ingredientes = this.toTitleCase(this.forma.get('Ingredientes').value);
+    encuestaNueva.precio = this.forma.get('precio').value;
+    encuestaNueva.peso = this.forma.get('peso').value;
+    this.fireService.create(encuestaNueva);
     this.ruta.navigate(["/home"]);
   }
 

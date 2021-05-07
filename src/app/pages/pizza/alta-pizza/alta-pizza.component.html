@@ -1,13 +1,12 @@
 <div class="container">
     <main>
-      <div class="py-3 text-center">      
-        <h1>Nueva Pizza</h1>
+      <div class="py-3 text-center">     
         <p class="text-muted">(Todos los campos son obligatorios)</p>    
       </div>
   
       <div class="row g-5">     
           <div class="col-md-12">
-              <form class="needs-validation" [formGroup]="forma" (ngSubmit)="NuevaEncuesta()">
+              <form class="needs-validation" [formGroup]="forma" (ngSubmit)="NuevaPizza()">
                   <div class="row g-3">
                           <div class="col-sm-6">
                               <label for="nombre" class="form-label">Nombre</label>
@@ -19,10 +18,22 @@
                           <div class="col-sm-6">
                               <label for="Ingredientes" class="form-label">Ingredientes</label>
                               <input type="text" class="form-control" id="Ingredientes" placeholder="Ingredientes" value="" formControlName="Ingredientes">
-                              <small class="invalid" *ngIf="forma.get('Ingredientes').errors?.required && forma.get('Ingredientes').touched">El apellido es requerido</small>
-                              <small class="invalid" *ngIf="forma.get('Ingredientes').errors?.contieneEspacios">El apellido no puede tener espacios</small>
+                              <small class="invalid" *ngIf="forma.get('Ingredientes').errors?.required && forma.get('Ingredientes').touched">Los Ingredientes son requeridos</small>
                           </div>
                       </div>
+                      <div class="row g-3">
+                      <div class="col-sm-6">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="precio" placeholder="precio" value="" formControlName="precio">
+                        <small class="invalid" *ngIf="forma.get('precio').errors?.required && forma.get('precio').touched">El Precio es requerido</small>    
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="peso" class="form-label">Peso</label>
+                        <input type="number" class="form-control" id="peso" placeholder="peso" value="" formControlName="peso">
+                        <small class="invalid" *ngIf="forma.get('peso').errors?.required && forma.get('peso').touched">El apellido es requerido</small>
+                    </div>
+                </div>
   
                   <hr class="my-4">
   

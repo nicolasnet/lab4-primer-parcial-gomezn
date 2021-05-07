@@ -23,6 +23,7 @@ import { ListadoRepartidoresComponent } from './pages/detalleRepartidor/listado-
 import { DetallePaisComponent } from './pages/detalleRepartidor/detalle-pais/detalle-pais.component';
 import { PizzaFormComponent } from './pages/pizza/pizza-form/pizza-form.component';
 import { AltaPizzaComponent } from './pages/pizza/alta-pizza/alta-pizza.component';
+import { ListadoPizzaComponent } from './pages/pizza/listado-pizza/listado-pizza.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AltaPizzaComponent } from './pages/pizza/alta-pizza/alta-pizza.componen
     ListadoRepartidoresComponent,
     DetallePaisComponent,
     PizzaFormComponent,
-    AltaPizzaComponent
+    AltaPizzaComponent,
+    ListadoPizzaComponent
   ],
   imports: [
     BrowserModule,
