@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Pizza } from 'src/app/clases/pizza';
+import { FirePizzaService } from 'src/app/servicios/fire-pizza.service';
 import { FirebaseBasicService } from 'src/app/servicios/firebase-basic.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class AltaPizzaComponent implements OnInit {
   public forma: FormGroup;
   nuevaPizza: Pizza;
 
-  constructor(private fb: FormBuilder, private fireService: FirebaseBasicService, private ruta: Router) { }
+  constructor(private fb: FormBuilder, private fireService: FirePizzaService, private ruta: Router) { }
 
   ngOnInit(): void {
     this.forma = this.fb.group({
